@@ -11,4 +11,8 @@ Route::get('register', function () {
     return view('register');
 });
 
+use App\Http\Controllers\LoginController;
+
+Route::post('/login', [LoginController::class, 'authenticate']);
+
 Route::post('/register', [RegisterController::class, 'store']);

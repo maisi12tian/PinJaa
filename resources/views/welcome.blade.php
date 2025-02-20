@@ -62,10 +62,10 @@
             text-align: center;
             margin-top: 10px;
         }
-        .social-login img {
-            width: 30px;
-            margin: 0 10px;
-            cursor: pointer;
+        .social-login a {
+            text-decoration: none;
+            color: #ff9800;
+            font-weight: bold;
         }
         .image-section {
             width: 50%;
@@ -86,38 +86,26 @@
     <div class="container">
         <div class="login-section">
             <h2>Selamat Datang!</h2>
-            <form id="loginForm">
+            <form id="loginForm" action="/login" method="POST">
+                @csrf
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" required>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                    <input type="password" name="password" id="password" required>
                 </div>
                 <button type="submit" class="login-button">Login</button>
             </form>
             <div class="social-login">
                 <p>Belum punya akun?</p>
-                <a href="">Daftar Sekarang</a>
+                <a href="/register">Daftar Sekarang</a>
             </div>
         </div>
         <div class="image-section">
-            <img src="{{asset('assets/logo.png')}}" alt="Illustration">
+            <img src="{{ asset('assets/logo.png') }}" alt="Illustration">
         </div>
     </div>
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-            
-            if (username === "admin" && password === "1234") {
-                alert("Login berhasil!");
-            } else {
-                alert("Username atau password salah!");
-            }
-        });
-    </script>
 </body>
 </html>
