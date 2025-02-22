@@ -18,3 +18,12 @@ export default {
     },
     plugins: [],
 };
+
+module.exports = {
+    content: ["./resources/views/**/*.blade.php"],
+    theme: {
+      extend: {},
+    },
+    plugins: [],
+  };
+  

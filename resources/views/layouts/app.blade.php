@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>@yield('title')</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@
             justify-content: center;
         }
         .login-section h2 {
-            color: #161515;
+            color: #ff9800;
             text-align: center;
         }
         .input-group {
@@ -62,6 +62,11 @@
             text-align: center;
             margin-top: 10px;
         }
+        .social-login a {
+            text-decoration: none;
+            color: #ff9800;
+            font-weight: bold;
+        }
         .image-section {
             width: 50%;
             background-color: #e3f2fd;
@@ -75,36 +80,9 @@
         .image-section img {
             width: 80%;
         }
-        .login-link {
-            text-align: center;
-            margin-top: 10px;
-        }
-        
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="login-section">
-            <h2>Selamat Datang!</h2>
-            <form id="loginForm" action="{{ route('login.submit') }}" method="POST">
-                @csrf
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <button type="submit" class="login-button">Login</button>
-            </form>
-            <div class="login-link">
-                <p>Belum punya akun? <a href="{{ route('register') }}">Daftar Sekarang</a></p>
-            </div>
-        </div>
-        <div class="image-section">
-            <img src="{{ asset('assets/logo.png') }}" alt="Illustration">
-        </div>
-    </div>
+    @yield('content')
 </body>
 </html>
