@@ -14,13 +14,12 @@
             <li><a href="{{ route('mahasiswa.dashboard') }}" class="flex items-center text-gray-700 hover:text-orange-600">🏠 Beranda</a></li>
             <li><a href="{{ route('barang.index') }}" class="flex items-center text-gray-700 hover:text-orange-600">📦 Daftar Barang</a></li>
             <li><a href="{{ route('mahasiswa.peminjaman') }}" class="flex items-center text-gray-700 hover:text-orange-600">📄 Peminjaman</a></li>
-            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
-            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
+            <li><a href="{{ route('mahasiswa.profile') }}" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
+            <li><a href="{{ route('mahasiswa.pengaturan') }}" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
         </ul>
         <a href="{{ route('login') }}" class="mt-auto text-gray-700">🚪 Keluar</a>
     </div>
         
-
     <!-- Content -->
     <div class="flex-1 p-8">
         <div class="flex justify-between items-center mb-6">
@@ -28,7 +27,7 @@
             <div class="bg-gray-300 p-2 rounded-full">👤</div>
         </div>
         
-        <h1 class="text-2xl font-bold mb-4">Laporan Pinjaman</h1>
+        <h1 class="text-2xl font-bold mb-4">Daftar Barang</h1>
         <a href="{{ route('barang.create') }}" class="bg-blue-400 text-white px-4 py-2 rounded">+ Barang</a>
         
         <table class="mt-4 w-full bg-white shadow-md rounded-lg overflow-hidden">

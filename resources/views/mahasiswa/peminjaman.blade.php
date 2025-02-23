@@ -13,8 +13,8 @@
             <li><a href="{{ route('mahasiswa.dashboard') }}" class="flex items-center text-gray-700 hover:text-orange-600">🏠 Beranda</a></li>
             <li><a href="{{ route('barang.index') }}" class="flex items-center text-gray-700 hover:text-orange-600">📦 Daftar Barang</a></li>
             <li><a href="{{ route('mahasiswa.peminjaman') }}" class="flex items-center text-gray-700 hover:text-orange-600">📄 Peminjaman</a></li>
-            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
-            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
+            <li><a href="{{ route('mahasiswa.profile') }}" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
+            <li><a href="{{ route('mahasiswa.pengaturan') }}" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
         </ul>
         <a href="{{ route('login') }}" class="mt-auto text-gray-700">🚪 Keluar</a>
     </div>
@@ -25,7 +25,7 @@
             <div class="bg-gray-300 p-2 rounded-full">👤</div>
         </div>
         <div class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-semibold mb-4">Laporan Barang</h2>
+            <h2 class="text-xl font-semibold mb-4">Peminjaman</h2>
             <table class="w-full border-collapse border border-gray-300">
                 <thead>
                     <tr class="bg-gray-200">
@@ -33,6 +33,7 @@
                         <th class="border border-gray-300 px-4 py-2">Jumlah</th>
                         <th class="border border-gray-300 px-4 py-2">Waktu</th>
                         <th class="border border-gray-300 px-4 py-2">Status</th>
+                        <th class="border border-gray-300 px-4 py-2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,42 +42,10 @@
                         <td class="border border-gray-300 px-4 py-2">1</td>
                         <td class="border border-gray-300 px-4 py-2">1/2/25</td>
                         <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-300 px-4 py-2">Terminal Listrik</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">9/2/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-white">
-                        <td class="border border-gray-300 px-4 py-2">Infocus</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">9/2/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-300 px-4 py-2">Sapu</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">22/2/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-white">
-                        <td class="border border-gray-300 px-4 py-2">Pel</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">19/2/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-gray-100">
-                        <td class="border border-gray-300 px-4 py-2">Tong Sampah</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">2/3/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
-                    </tr>
-                    <tr class="bg-white">
-                        <td class="border border-gray-300 px-4 py-2">Alas Kaki</td>
-                        <td class="border border-gray-300 px-4 py-2">1</td>
-                        <td class="border border-gray-300 px-4 py-2">9/3/25</td>
-                        <td class="border border-gray-300 px-4 py-2 text-blue-600 font-bold">Berlangsung</td>
+                        <td class="p-3 flex gap-2">
+                                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded" onclick="return confirm('Anda yakin barang sudah dikembalikan?')">Selesai</button>
+                            </form>
+                        </td>
                     </tr>
                 </tbody>
             </table>

@@ -53,6 +53,14 @@ Route::get('/peminjaman', function () {
     return view('mahasiswa.peminjaman');
 })->name('mahasiswa.peminjaman');
 
+Route::get('/profile', function () {
+    return view('mahasiswa.profile');
+})->name('mahasiswa.profile');
+
+Route::get('/pengaturan', function () {
+    return view('mahasiswa.pengaturan');
+})->name('mahasiswa.pengaturan');
+
 //input barang
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
