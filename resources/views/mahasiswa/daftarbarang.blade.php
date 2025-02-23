@@ -8,17 +8,18 @@
 </head>
 <body class="flex bg-gray-100">
     <!-- Sidebar -->
-    <div class="w-64 h-screen bg-gray-200 p-5 flex flex-col">
-        <h2 class="text-2xl font-bold text-orange-500">PinJaa</h2>
-        <ul class="mt-5 space-y-4">
-            <li><a href="#" class="flex items-center text-gray-700">🏠 Beranda</a></li>
-            <li><a href="#" class="flex items-center text-gray-700">📦 Daftar Barang</a></li>
-            <li><a href="#" class="flex items-center text-gray-700">📄 Peminjaman</a></li>
-            <li><a href="#" class="flex items-center text-gray-700">👤 Profil Pengguna</a></li>
-            <li><a href="#" class="flex items-center text-gray-700">⚙ Pengaturan</a></li>
+    <div class="w-64 bg-gray-200 h-screen p-6 flex flex-col">
+        <img src="{{asset('assets/logo.png')}}" alt="Illustration"></img>
+        <ul class="mt-6 space-y-4">
+            <li><a href="{{ route('mahasiswa.dashboard') }}" class="flex items-center text-gray-700 hover:text-orange-600">🏠 Beranda</a></li>
+            <li><a href="{{ route('barang.index') }}" class="flex items-center text-gray-700 hover:text-orange-600">📦 Daftar Barang</a></li>
+            <li><a href="{{ route('mahasiswa.peminjaman') }}" class="flex items-center text-gray-700 hover:text-orange-600">📄 Peminjaman</a></li>
+            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
+            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
         </ul>
-        <a href="#" class="mt-auto text-gray-700">🚪 Keluar</a>
+        <a href="{{ route('login') }}" class="mt-auto text-gray-700">🚪 Keluar</a>
     </div>
+        
 
     <!-- Content -->
     <div class="flex-1 p-8">
@@ -28,7 +29,7 @@
         </div>
         
         <h1 class="text-2xl font-bold mb-4">Laporan Pinjaman</h1>
-        <a href="{{ route('barang.create') }}" class="bg-gray-400 text-white px-4 py-2 rounded">+ Barang</a>
+        <a href="{{ route('barang.create') }}" class="bg-blue-400 text-white px-4 py-2 rounded">+ Barang</a>
         
         <table class="mt-4 w-full bg-white shadow-md rounded-lg overflow-hidden">
             <thead class="bg-gray-300">

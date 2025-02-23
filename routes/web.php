@@ -49,67 +49,9 @@ Route::get('/mahasiswa/dashboard', function () {
     return view('mahasiswa.dashboard');
 })->name('mahasiswa.dashboard');
 
-//mahasiswa
-
-Route::middleware(['auth', 'role:mahasiswa'])->group(function () {
-    Route::get('/peminjaman', function () {
-        $barang = Barang::whereNotIn('id', function ($query) {
-            $query->select('barang_id')->from('peminjaman')->where('status', '!=', 'selesai');
-        })->get();
-        return view('mahasiswa.peminjaman', compact('barang'));
-    });
-
-    Route::post('/peminjaman', function (Request $request) {
-        $request->validate([
-            'barang_id' => 'required|exists:barang,id',
-        ]);
-        
-        $peminjaman = Peminjaman::create([
-            'user_id' => Auth::id(),
-            'barang_id' => $request->barang_id,
-            'tanggal_peminjaman' => now(),
-            'status' => 'menunggu',
-        ]);
-        return redirect('/peminjaman')->with('success', 'Peminjaman berhasil diajukan');
-    });
-
-    Route::get('/histori', function () {
-        $histori = Peminjaman::where('user_id', Auth::id())->orderBy('tanggal_peminjaman', 'desc')->get();
-        return view('mahasiswa.histori', compact('histori'));
-    });
-});
-
-//admin
-
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::get('/verifikasi', function () {
-        $peminjaman = Peminjaman::where('status', 'menunggu')->orderBy('tanggal_peminjaman', 'asc')->get();
-        return view('admin.verifikasi', compact('peminjaman'));
-    });
-
-    Route::post('/verifikasi/{id}/setujui', function ($id) {
-        $peminjaman = Peminjaman::findOrFail($id);
-        $peminjaman->update(['status' => 'disetujui']);
-
-        VerifikasiPeminjaman::create([
-            'peminjaman_id' => $peminjaman->id,
-            'admin_id' => Auth::id(),
-            'status' => 'disetujui',
-        ]);
-        return redirect('/verifikasi')->with('success', 'Peminjaman disetujui');
-    });
-
-    Route::post('/verifikasi/{id}/selesai', function ($id) {
-        $peminjaman = Peminjaman::findOrFail($id);
-        $peminjaman->update(['status' => 'selesai', 'tanggal_pengembalian' => now()]);
-        return redirect('/verifikasi')->with('success', 'Peminjaman selesai');
-    });
-
-    Route::get('/histori-admin', function () {
-        $histori = Peminjaman::orderBy('tanggal_peminjaman', 'desc')->get();
-        return view('admin.histori', compact('histori'));
-    });
-});
+Route::get('/peminjaman', function () {
+    return view('mahasiswa.peminjaman');
+})->name('mahasiswa.peminjaman');
 
 //input barang
 

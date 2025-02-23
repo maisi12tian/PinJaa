@@ -4,113 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PinJaa Dashboard</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        .sidebar {
-            width: 250px;
-            background: #f3f3f3;
-            padding: 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .sidebar h2 {
-            color: #ff6600;
-            font-size: 24px;
-        }
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar ul li {
-            margin: 15px 0;
-        }
-        .sidebar ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .content {
-            flex: 1;
-            padding: 30px;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .search-bar {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            outline: none;
-        }
-        .profile-button {
-            background: #e0e0e0;
-            padding: 10px 15px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-        }
-        .dashboard-box {
-            background: #e0e0e0;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .stats {
-            display: flex;
-            gap: 20px;
-        }
-        .stat-card {
-            flex: 1;
-            background: #e0e0e0;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 18px;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="sidebar">
-        <h2>PinJaa</h2>
-        <ul>
-            <li><a href="#">🏠 Beranda</a></li>
-            <li><a href="#">📦 Daftar Barang</a></li>
-            <li><a href="#">📄 Peminjaman</a></li>
-            <li><a href="#">👤 Profil Pengguna</a></li>
-            <li><a href="#">⚙ Pengaturan</a></li>
-            <li><a href="#">🚪 Keluar</a></li>
+<body class="bg-gray-100 flex">
+    <!-- Sidebar -->
+    <div class="w-64 bg-gray-200 h-screen p-6 flex flex-col">
+        <img src="{{asset('assets/logo.png')}}" alt="Illustration"></img>
+        <ul class="mt-6 space-y-4">
+            <li><a href="{{ route('mahasiswa.dashboard') }}" class="flex items-center text-gray-700 hover:text-orange-600">🏠 Beranda</a></li>
+            <li><a href="{{ route('barang.index') }}" class="flex items-center text-gray-700 hover:text-orange-600">📦 Daftar Barang</a></li>
+            <li><a href="{{ route('mahasiswa.peminjaman') }}" class="flex items-center text-gray-700 hover:text-orange-600">📄 Peminjaman</a></li>
+            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">👤 Profil Pengguna</a></li>
+            <li><a href="#" class="flex items-center text-gray-700 hover:text-orange-600">⚙ Pengaturan</a></li>
         </ul>
+        <a href="{{ route('login') }}" class="mt-auto text-gray-700">🚪 Keluar</a>
     </div>
-    <div class="content">
-        <div class="header">
-            <input type="text" placeholder="Telusuri" class="search-bar">
-            <div class="profile-button">🔵 Bagas A.</div>
+    
+    <!-- Konten Utama -->
+    <div class="flex-1 p-8">
+        <div class="flex justify-between items-center mb-6">
+            <input type="text" placeholder="Cari..." class="border p-2 rounded-lg w-80">
+            <div class="bg-gray-300 p-2 rounded-full">👤</div>
         </div>
-        <div class="dashboard-box">
-            <h3>Hi, Bagas Alif 👋</h3>
-            <p>Mau pinjam apa hari ini?</p>
+        <br>
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h3 class="text-xl font-bold">Hi, Bagas Alif 👋</h3>
+            <p class="text-gray-600">Mau pinjam apa hari ini?</p>
         </div>
-        <div class="stats">
-            <div class="stat-card">Rekomendasi</div>
-            <div class="stat-card">Yang Kamu Pinjam</div>
+        
+        <div class="grid grid-cols-2 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md text-center font-semibold text-lg">Rekomendasi</div>
+            <div class="bg-white p-6 rounded-lg shadow-md text-center font-semibold text-lg">Yang Kamu Pinjam</div>
         </div>
     </div>
 </body>
