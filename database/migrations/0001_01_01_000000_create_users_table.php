@@ -18,8 +18,16 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('role')->default('mahasiswa');
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('role');
+        });
+
+        Schema::dropIfExists('peminjaman');
+        Schema::dropIfExists('verifikasi_peminjaman');
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();

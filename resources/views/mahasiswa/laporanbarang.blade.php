@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinJaa - Daftar Barang</title>
+    <title>PinJaa - laporan barang</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,7 +15,7 @@
         }
         .sidebar {
             width: 250px;
-            background: #f3f3f3;
+            background:rgb(209, 204, 204);
             padding: 20px;
             height: 100vh;
             display: flex;
@@ -113,55 +113,55 @@
             <div class="profile-button">🔵 Bagas A.</div>
         </div>
         <div class="table-container">
-            <h2>Daftar Barang</h2>
+            <h2>Laporang barang</h2>
             <table>
                 <tr>
                     <th>Nama</th>
                     <th>Jumlah</th>
-                    <th>Gambar</th>
-                    <th>Action</th>
+                    <th>Waktu</th>
+                    <th>Status</th>
                 </tr>
                 <tr>
                     <td>HDMI</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>1</td>
+                    <td> 1/2/24</td>
+                    <td class="action-btn"> <b>Berlangsung</b></td>
                 </tr>
                 <tr>
                     <td>Terminal Listrik</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>1</td>
+                    <td>9/2/25</td>
+                    <td class="action-btn"><b>Berlangsung</b></td>
                 </tr>
                 <tr>
                     <td>Infocus</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>1</td>
+                    <td>9/2/25</td>
+                    <td class="action-btn"><b>Berlangsung</b></td>
                 </tr>
                 <tr>
                     <td>Sapu</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>1</td>
+                    <td>22/2/25</td>
+                    <td class="action-btn"><b>Berlangsung</b></td>
                 </tr>
                 <tr>
-                    <td>Pail</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>pel</td>
+                    <td>1</td>
+                    <td>19/2/25</td>
+                    <td class="action-btn"><b>Berlangsung</b></td>
                 </tr>
                 <tr>
                     <td>Tong Sampah</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>1</td>
+                    <td>2/3/25</td>
+                    <td class="action-btn"><b>Berlansung</b></td>
                 </tr>
                 <tr>
-                    <td>Alat Kecil</td>
-                    <td>10</td>
-                    <td></td>
-                    <td class="action-btn">Pinjam Sekarang</td>
+                    <td>Alas kaki</td>
+                    <td>1</td>
+                    <td>9/3/25</td>
+                    <td class="action-btn"><b>Berlansung</b></td>
                 </tr>
             </table>
         </div>

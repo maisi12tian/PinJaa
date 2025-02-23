@@ -22,7 +22,7 @@ class LoginController extends Controller
             // Simpan sesi login
             Auth::login($user);
 
-            return response()->json(['message' => 'Login berhasil!']);
+            return redirect()->route("mahasiswa.dashboard");
         }
 
         return response()->json(['message' => 'Email atau password salah!'], 401);
